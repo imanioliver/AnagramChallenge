@@ -61,8 +61,64 @@ function generateAnagram(input, outputFunction) {
 }
 
 
+function anagramDoubles (arr){
+  let placeholdArr = [];
+  let map = [];
+
+
+  for (var i = 0; i < arr.length; i++) {
+    let firstWord = arr[i];
+
+    for (var j = 0; j < arr.length; j++) {
+      let secondWord = arr[j]
+      let wordPair = firstWord + " " + secondWord
+      placeholdArr.push(wordPair)
+      // console.log("this is the wordPair we are currently working with", wordPair);
+      // console.log(placeholdArr);
+
+      for (var i = 0; i < placeholdArr.length; i++) {
+        if (wordPair === placeholdArr[i]){
+          // console.log("placeholdArr[i] " + placeholdArr[i] + " is the same as wordPair " + wordPair);
+        }
+
+        else if(wordPair !== placeholdArr[i]){
+          // console.log("placeholdArr[i] " + placeholdArr[i] + " is not the same as the same as wordPair " + wordPair);
+          generateAnagram(placeholdArr[i], function (output) {
+
+            if (!map[output]) {
+              map[output] = output;
+              // console.log(output);
+            }
+          })
+
+
+          //cool that works
+          // now I want to generate all the anagrams for dummy[i] as I go. but I'll call the function (generateAnagram(dummy[i])) like in an if statement within this 1
+          // if they match, then print wordPair +  "and" + "placeholdArr[i]" and they'll already have the space in there!!
+          //now let's figure out how to generate the anagram with the generate function
+
+          // generateAnagram(placeholdArr[i], function (output) {
+          //
+          //   if (!map[output]) {
+          //     map[output] = output;
+          //     // return output;
+          //     console.log(output);
+          //   }
+          // }).includes(wordPair);
+
+        }
+      }
+    }
+  }
+}
+
+
+
+// anagramDoubles(prepareStr(string5));
+// console.log(generateAnagram(prepareStr(string5)))
+
 console.log("STRING0: ", prepareStr(string0));
-console.log("STRING1: ", prepareStr(string1)); //currently, I'm only running this in the console with assert
+console.log("STRING1: ", prepareStr(string1));
 console.log("STRING2: ", prepareStr(string2));
 console.log("STRING3: ", prepareStr(string3));
 console.log("STRING4: ", prepareStr(string4));
