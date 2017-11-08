@@ -28,20 +28,21 @@ function prepareStr(str){
     return Array.from(set);
 }
 
-console.log("STRING0: ", prepareStr(string0));
-console.log("STRING1: ", prepareStr(string1));
-console.log("STRING2: ", prepareStr(string2));
-console.log("STRING3: ", prepareStr(string3));
-console.log("STRING4: ", prepareStr(string4));
-console.log("STRING5: ", prepareStr(string5));
+//tests
+  console.log("STRING0: ", prepareStr(string0));
+  console.log("STRING1: ", prepareStr(string1));
+  console.log("STRING2: ", prepareStr(string2));
+  console.log("STRING3: ", prepareStr(string3));
+  console.log("STRING4: ", prepareStr(string4));
+  console.log("STRING5: ", prepareStr(string5));
 
 
 
 //instantiate array that will hold all possible word pairs in on array
-let placeholdArr = [];
 
 function anagramDoubles (arr){
-  let map = [];
+  let placeholdArr = [];
+  let results = document.getElementById('results');
 
 
   for (var i = 0; i < arr.length; i++) {
@@ -51,24 +52,27 @@ function anagramDoubles (arr){
       let secondWord = arr[j]
       let wordPair = firstWord + " " + secondWord
       placeholdArr.push(wordPair)
-      // console.log("this is the wordPair we are currently working with", wordPair);
+      console.log("this is the wordPair we are currently working with", wordPair);
       // console.log(placeholdArr);
 
-      for (var i = 0; i < placeholdArr.length; i++) {
-        if (wordPair === placeholdArr[i]){
+      for (var k = 0; k < placeholdArr.length; k++) {
+        if (wordPair === placeholdArr[k]){
           // console.log("placeholdArr[i] " + placeholdArr[i] + " is the same as wordPair " + wordPair);
         }
-
-        else if(wordPair !== placeholdArr[i]){
+        else if(wordPair !== placeholdArr[k]){
           // console.log("placeholdArr[i] " + placeholdArr[i] + " is not the same as the same as wordPair " + wordPair);
 
           if (wordPair.split("").sort().join("") === placeholdArr[i].split("").sort().join("")){
-            console.log(wordPair + " and "+ placeholdArr[i]);
+
+            results.innerHTML += `<div> Anagrams:  ${wordPair} and ${placeholdArr[i]} </div> </br> </br>`
+
+            // console.log(wordPair + " and "+ placeholdArr[i]);
+
           }
 
 
         }
-        else if(wordPair !== placeholdArr[i] && wordPair.split("").sort().join("") !== placeholdArr[i].split("").sort().join("")) {
+        else if(wordPair !== placeholdArr[k] && wordPair.split("").sort().join("") !== placeholdArr[k].split("").sort().join("")) {
           console.log("There are no double anagrams here!");
         }
       }
@@ -80,4 +84,4 @@ function anagramDoubles (arr){
 // anagramDoubles(prepareStr(string5))
 
 
-anagramDoubles(prepareStr(string5));
+anagramDoubles(prepareStr(string3));
