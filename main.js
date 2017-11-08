@@ -33,6 +33,34 @@ function prepareStr (str) {
   return Array.from(set);
 }
 
+function generateAnagram(input, outputFunction) {
+  var length = input.length;
+
+  // if there are only two characters, print both combinations
+  if (length == 2) {
+    outputFunction(input);
+    outputFunction(input[1] + input[0]);
+  }
+  else if (length > 2) {
+    // iterate through each character in the string
+    // remove the first character
+    // print first character along with all combinations of the remaining characters
+    // this function is called recursively to print all available combinations
+    for (var n = 0; n < input.length; n++) {
+      var firstchar = input[0];
+      var rotatedString = input.substring(1);
+
+      generateAnagram(rotatedString, function (res) {
+        outputFunction(firstchar + res);
+      });
+
+      // rotate
+      input = rotatedString + firstchar;
+    }
+  }
+}
+
+
 console.log("STRING0: ", prepareStr(string0));
 console.log("STRING1: ", prepareStr(string1)); //currently, I'm only running this in the console with assert
 console.log("STRING2: ", prepareStr(string2));
