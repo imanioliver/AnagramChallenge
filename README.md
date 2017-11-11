@@ -18,5 +18,3 @@ The function should also work on long blocks of text.
 - So "Surely. And they're completely right!" becomes four words: "surely  they completely right"
 - Neither of the words in the first pair can be repeated in the second pair.
 
-Please let me know if you have any questions or clarifications! 
-
