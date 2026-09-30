@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<rect width="800" height="600" fill="#0E3F47"/>
+<circle cx="690" cy="110" r="190" fill="#185A63"/>
+<path d="M0 470 C200 400 420 520 800 430 V600 H0 Z" fill="#A4461C"/>
+<path d="M0 510 C220 450 430 560 800 480" fill="none" stroke="#F0B454" stroke-width="6"/>
+<text x="60" y="120" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="600" letter-spacing="4" fill="#F0B454">COBB COUNTY SHERIFF’S OFFICE</text>
+<text x="60" y="220" font-family="Georgia, serif" font-size="64" font-weight="600" fill="#F5EFE6">3rd Annual</text>
+<text x="60" y="300" font-family="Georgia, serif" font-size="64" font-weight="600" fill="#F5EFE6">Women’s Symposium</text>
+<text x="60" y="370" font-family="Georgia, serif" font-size="34" font-style="italic" fill="#F0B454">The Power of Presence</text>
+</svg>

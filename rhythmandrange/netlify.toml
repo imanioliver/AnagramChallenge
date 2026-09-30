@@ -1,0 +1,33 @@
+# Netlify config for rhythmandrange.com (static site, no framework).
+# If you connect this repo in Netlify, set "Base directory" to: rhythmandrange
+[build]
+  publish = "."
+  # Pulls any missing original images from the old WordPress site.
+  # Harmless once images/ is committed (existing files are skipped).
+  command = "sh fetch-images.sh"
+
+# Old WordPress URLs -> new single-page anchors
+[[redirects]]
+  from = "/contact/*"
+  to = "/#contact"
+  status = 301
+[[redirects]]
+  from = "/wp-admin/*"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/feed/*"
+  to = "/"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
