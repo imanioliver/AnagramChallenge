@@ -1,4 +1,5 @@
 #!/bin/sh
+# Some images are already committed (supplied directly); they are skipped.
 # Downloads the site's original images (unedited) from the current WordPress
 # install into ./images so the site no longer depends on WordPress.
 # Run this ONCE while the old WordPress site is still live, then commit the
@@ -24,12 +25,12 @@ get cred-masters.png          D9C13F49-4E8D-4B49-B360-E7E6D9BC280A.png
 get cred-nasm.png             NASM-logo.png
 get cred-track.webp           3AFB22E2-D597-4390-95B5-4C9A8B4A26C9.webp
 get cred-ryt.webp             YA2425_Badge_RYT_200-1.webp
-get focus-mindset.png         2CC1E24F-E1DA-45BF-BD4E-AB842B8B693E.png
+get focus-mindset.webp     2CC1E24F-E1DA-45BF-BD4E-AB842B8B693E.png
 get focus-mobility.jpg        E5AF1EC9-AF9C-4260-9F0B-489C035555C1-e1774642120125.jpg
-get focus-balance.png         10E98DE8-EDCD-44D6-BAE5-F87438176B63.png
+get focus-balance.webp     10E98DE8-EDCD-44D6-BAE5-F87438176B63.png
 get focus-consistency.png     AE036BE8-9E80-4065-A0AB-5F03F00D6F14.png
 get event-symposium-3.webp    64a43e51-82b8-45dd-b4f5-5840961aef0b.webp
-get event-nawlee.jpeg         4B92CFDD-E160-4CB8-83B2-99D00746038F-scaled-e1774300232631.jpeg
+get event-nawlee.webp      4B92CFDD-E160-4CB8-83B2-99D00746038F-scaled-e1774300232631.jpeg
 get event-symposium-2.jpg     D36AD0A7-1FEF-45BC-B2D2-B7710478095C.jpg
 get gallery-1.jpg             A62401BE-7F80-4EC7-A754-54A6674B305B.jpg
 get gallery-2.jpg             FE43D530-B7D7-4D20-BC00-2BE9EE2E5B00.jpg
