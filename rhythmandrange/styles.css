@@ -190,12 +190,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .event img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--tint); }
 .event-body { padding: 1.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
 .event-body h3 { margin: 0; }
-.event-feature { display: grid; grid-template-columns: 1fr 1.2fr; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
-.event-feature img { aspect-ratio: 1; height: 100%; }
-.event-feature .event-body { padding: clamp(1.5rem, 4vw, 3rem); }
-.event-feature h3 { font-family: var(--font-display); font-size: var(--step-2); color: var(--primary); }
-.tag { display: inline-block; margin: 0; padding: 0.3rem 0.75rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-hover); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
-@media (max-width: 760px) { .event-feature { grid-template-columns: 1fr; } }
+.events-grid .event-body { flex: 1; }
 
 /* Gallery */
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
@@ -210,6 +205,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .lightbox-close { position: absolute; top: -56px; right: 0; width: 48px; height: 48px; border-radius: 50%; border: 0; background: var(--on-dark); color: var(--primary); font-size: 1.75rem; line-height: 1; cursor: pointer; }
 
 /* Testimonials */
+.quotes-grid { max-width: 920px; margin-inline: auto; }
 .quote { display: flex; flex-direction: column; }
 .quote blockquote { margin: 0 0 1.25rem; flex: 1; }
 .quote blockquote p { color: var(--ink); font-size: var(--step-1); line-height: 1.55; }

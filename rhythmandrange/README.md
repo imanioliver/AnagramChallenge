@@ -13,7 +13,7 @@ The images still live on the WordPress server, so copy them **before** you point
    - **From Git:** in Netlify choose *Add new site → Import from Git*, pick this repo, and set **Base directory** to `rhythmandrange`. No other build settings are needed because `netlify.toml` has them.
 3. **Check the preview URL** (`*.netlify.app`): images, the menu, and the contact form.
 4. **Connect the domain:** *Domain management → Add domain → rhythmandrange.com*, then update DNS at your registrar as Netlify instructs. HTTPS is issued automatically.
-5. **Contact form:** Netlify Forms picks up the form automatically. Under *Forms → Form notifications*, add an email notification to rythmandrangellc@gmail.com.
+5. **Contact form:** Netlify Forms picks up the form automatically. Under *Forms → Form notifications*, add an email notification to rhythmandrangellc@gmail.com.
 
 ## Customizing
 
