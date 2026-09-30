@@ -125,7 +125,7 @@ p { margin: 0 0 1em; text-wrap: pretty; }
 .hero .eyebrow { color: var(--primary-soft); }
 .hero-tags span { white-space: nowrap; }
 .hero-tags span:not(:last-child)::after { content: "·"; margin: 0 0.5em; }
-.hero-media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: calc(var(--radius) * 1.5); box-shadow: var(--shadow); background: var(--tint); }
+.hero-media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 15%; border-radius: calc(var(--radius) * 1.5); box-shadow: var(--shadow); background: var(--tint); }
 @media (max-width: 860px) {
   .hero-inner { grid-template-columns: 1fr; }
   .hero-media { order: -1; }

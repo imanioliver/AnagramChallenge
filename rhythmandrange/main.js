@@ -29,3 +29,24 @@ if (lightbox && typeof lightbox.showModal === 'function') {
 
 // Keep the copyright year current
 document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
+
+// Gallery media is pulled from the old site at build time. If a file is
+// missing, drop it rather than show a broken image; hide the section if empty.
+const gallery = document.getElementById('gallery');
+if (gallery) {
+  const hideIfEmpty = () => {
+    if (!gallery.querySelector('.gallery li, .gallery-video')) {
+      gallery.hidden = true;
+      document.querySelectorAll('a[href="#gallery"]').forEach((a) => a.closest('li').remove());
+    }
+  };
+  gallery.querySelectorAll('.gallery img').forEach((img) => {
+    const drop = () => { img.closest('li').remove(); hideIfEmpty(); };
+    if (img.complete && img.naturalWidth === 0) drop(); else img.addEventListener('error', drop);
+  });
+  const video = gallery.querySelector('.gallery-video');
+  if (video) {
+    const dropVideo = () => { video.remove(); hideIfEmpty(); };
+    if (video.error) dropVideo(); else video.addEventListener('error', dropVideo);
+  }
+}

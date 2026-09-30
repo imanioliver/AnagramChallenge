@@ -18,4 +18,4 @@ The images still live on the WordPress server, so copy them **before** you point
 ## Customizing
 
 - **Colors and fonts:** every color is a token at the top of `styles.css` (`:root`). Change them there only.
-- **Hero photo:** `images/hero.jpg`. By default this is the first gallery photo. To use a different original photo, run `HERO_FILE=<filename> sh fetch-images.sh` after deleting `images/hero.jpg`, or drop in any photo named `hero.jpg`.
+- **Images:** everything except the gallery is committed in `images/`. The line icons (`*.svg`) and event tiles were drawn to match the site's style and stand in for originals that weren't supplied; drop in a real file and update the `src` in `index.html` to swap one. Gallery photos and the video are pulled by `fetch-images.sh`; if any are missing, the page hides them (or the whole gallery) instead of showing broken images.
